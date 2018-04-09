@@ -1,0 +1,74 @@
+##################################################################################
+## la.ucf
+##
+## Contains assignment and iostandard information for all used pins
+## Author: Mich He, <mhe747@gmail.com> in SUMPx15 Project.
+##
+## 2018 SUMPx15 Project started.
+##        : https://github.com/mhe747/sumpx15
+##
+## Defines all inputs and outputs that represent phyisical pins of
+## the fpga from BeagleSDR 
+##        : https://github.com/mhe747/dawnboard/tree/master/schematics
+##
+####################################################################################
+
+
+NET "clockIn"  LOC = "P80" | IOSTANDARD = LVTTL ;
+#NET "clockIn" CLOCK_DEDICATED_ROUTE = FALSE;
+NET osc125_clk LOC = "p184" | IOSTANDARD=LVTTL;
+
+# ADC - samples inputs
+NET input<0>  LOC="P199" | IOSTANDARD=LVTTL | PULLUP;                       # 
+NET input<1>  LOC="P200" | IOSTANDARD=LVTTL | PULLUP;                       # A1
+NET input<2>  LOC="P197" | IOSTANDARD=LVTTL | PULLUP;                       # A2
+NET input<3>  LOC="P196" | IOSTANDARD=LVTTL | PULLUP;                       # A3
+NET input<4>  LOC="P193" | IOSTANDARD=LVTTL | PULLUP;                       # A4
+NET input<5>  LOC="P192" | IOSTANDARD=LVTTL | PULLUP;                       # A5
+NET input<6>  LOC="P190" | IOSTANDARD=LVTTL | PULLUP;                       # A6
+NET input<7>  LOC="P189" | IOSTANDARD=LVTTL | PULLUP;                       # A7
+NET input<8>  LOC="P187" | IOSTANDARD=LVTTL | PULLUP;                       # A8
+NET input<9>  LOC="P185" | IOSTANDARD=LVTTL | PULLUP;                       # A9
+NET input<10> LOC="P181" | IOSTANDARD=LVTTL | PULLUP;                       # A10
+NET input<11> LOC="P180" | IOSTANDARD=LVTTL | PULLUP;                       # A11
+NET input<12> LOC="P175" | IOSTANDARD=LVTTL | PULLUP;                       # A12
+NET input<13> LOC="P174" | IOSTANDARD=LVTTL | PULLUP;                       # A13
+NET ADC_SCLK  LOC = "P205" | IOSTANDARD = LVTTL;
+NET ADC_SDATA LOC = "P203" | IOSTANDARD = LVTTL;
+NET ADC_SEN   LOC = "P202" | IOSTANDARD = LVTTL;
+NET ADC_RESET LOC = "P178" | IOSTANDARD = LVTTL;
+NET ADC_CLKP LOC = "P179" | IOSTANDARD = LVTTL;
+
+# Wave generator - DAC
+NET "wave<0>"  LOC = "P2" | IOSTANDARD = LVTTL ;
+NET "wave<1>"  LOC = "P3" | IOSTANDARD = LVTTL ;
+NET "wave<2>"  LOC = "P4" | IOSTANDARD = LVTTL ;
+NET "wave<3>"  LOC = "P5" | IOSTANDARD = LVTTL ;
+NET "wave<4>"  LOC = "P8" | IOSTANDARD = LVTTL ;
+NET "wave<5>"  LOC = "P9" | IOSTANDARD = LVTTL ;
+NET "wave<6>"  LOC = "P11" | IOSTANDARD = LVTTL ;
+NET "wave<7>"  LOC = "P12" | IOSTANDARD = LVTTL ;
+NET "wave<8>"  LOC = "P15" | IOSTANDARD = LVTTL ;
+NET "wave<9>"  LOC = "P16" | IOSTANDARD = LVTTL ;
+NET "wave<10>"  LOC = "P18" | IOSTANDARD = LVTTL ;
+NET "wave<11>"  LOC = "P19" | IOSTANDARD = LVTTL ;
+NET "wave<12>"  LOC = "P22" | IOSTANDARD = LVTTL ;
+NET "wave<13>"  LOC = "P23" | IOSTANDARD = LVTTL ;
+
+NET "DAC_CLK"  LOC = "P24" | IOSTANDARD = LVTTL ;
+NET "DAC_SLEEP"  LOC = "P25" | IOSTANDARD = LVTTL ;
+
+# LED - use LED<7:0>
+NET "led<0>"  LOC = "P49" | IOSTANDARD = LVTTL ;
+NET "led<1>"  LOC = "P50" | IOSTANDARD = LVTTL ;
+
+# RESET - use BTN_SOUTH
+NET "resetSwitch"  LOC = "P42" | IOSTANDARD = LVTTL | PULLUP ;
+
+# SWITCH to control AVR or other connected power
+# not used here
+#NET "PWR_CONTR" LOC = "P58" | IOSTANDARD = LVTTL | PULLUP ;
+
+## RS232
+NET "rx"  LOC = "p100" | IOSTANDARD = LVTTL ;
+NET "tx"  LOC = "p99" | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = SLOW ;
