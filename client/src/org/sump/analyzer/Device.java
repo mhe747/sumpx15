@@ -419,7 +419,7 @@ public class Device extends Object {
 	 * @return captured data
 	 * @throws IOException when writing to or reading from device fails
 	 */
-	public SendData send() throws IOException {
+	public void send() throws IOException {
 		OutputStream outputStream = port.getOutputStream();
 		InputStream inputStream = port.getInputStream();
 
@@ -429,7 +429,6 @@ public class Device extends Object {
 
 		// check if data needs to be multiplexed
 		/* TODO : IMPLEMENTATION */
-		return (null);
 	}
 	
 	/**

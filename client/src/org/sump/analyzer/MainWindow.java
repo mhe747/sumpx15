@@ -300,7 +300,7 @@ public final class MainWindow extends WindowAdapter implements Runnable, ActionL
 		projectChooser = new JFileChooser();
 		projectChooser.addChoosableFileFilter((FileFilter) new SLPFilter());
 		
-		adc_controller = new ADCController();
+		adc_controller = new DeviceController();
 		dac_controller = new DACController();
 		//project.addConfigurable(controller);
 
@@ -668,8 +668,8 @@ public final class MainWindow extends WindowAdapter implements Runnable, ActionL
 				            	integers[i*validIndex + j] = integersTmp[j];
 				            
 				            diagram.setCapturedData(new CapturedData(integers, integers.length,200000000,16,-4));
-				            ADCController.getExternalData = true;
-				            ADCController.externalCapturedData = new CapturedData(integers, integers.length,200000000,16,-4);
+				            DeviceController.getExternalData = true;
+				            DeviceController.externalCapturedData = new CapturedData(integers, integers.length,200000000,16,-4);
 				            
 				        }
 				    });
@@ -689,12 +689,12 @@ public final class MainWindow extends WindowAdapter implements Runnable, ActionL
 				f.setVisible(true);
 				
 			}else if (label.equals("Capture...")) {
-				if (adc_controller.showCaptureDialog(frame) == ADCController.DATA_READ) {
+				if (adc_controller.showCaptureDialog(frame) == DeviceController.DATA_READ) {
 					diagram.setCapturedData(adc_controller.getDeviceData());
 				}
 
 			} else if (label.equals("Repeat Capture")) {
-				if (adc_controller.showCaptureProgress(frame) == ADCController.DATA_READ) {
+				if (adc_controller.showCaptureProgress(frame) == DeviceController.DATA_READ) {
 					diagram.setCapturedData(adc_controller.getDeviceData());
 				}
 
@@ -836,7 +836,7 @@ public final class MainWindow extends WindowAdapter implements Runnable, ActionL
 	
 	private JFileChooser fileChooser;
 	private JFileChooser projectChooser;
-	private ADCController adc_controller;
+	private DeviceController adc_controller;
 	private DACController dac_controller;
 	private Diagram diagram;
 	private Project project;
