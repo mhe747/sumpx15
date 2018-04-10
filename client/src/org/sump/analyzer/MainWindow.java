@@ -62,7 +62,8 @@ import javax.swing.event.DocumentListener;
 import javax.swing.filechooser.FileFilter;
 
 import org.sump.analyzer.tools.Tool;
-
+import java.util.Timer;
+import java.util.TimerTask;
 /**
  * Main frame and starter for Logic Analyzer Client.
  * <p>
@@ -72,6 +73,8 @@ import org.sump.analyzer.tools.Tool;
  * @author Michael "Mr. Sump" Poppitz
  */
 public final class MainWindow extends WindowAdapter implements Runnable, ActionListener, WindowListener, StatusChangeListener {
+
+	private Timer timer;
 
 	/**
 	 * Creates a JMenu containing items as specified.
@@ -180,6 +183,14 @@ public final class MainWindow extends WindowAdapter implements Runnable, ActionL
 	public MainWindow() {
 		super();
 		project = new Project();
+		timer = new Timer();
+		timer.scheduleAtFixedRate(new TimerTask() {
+			  @Override
+			  public void run() {
+			    // 
+				  System.out.println("timer..");
+			  }
+		}, 1, 10000);
 	}
 	
 	/**
@@ -695,7 +706,7 @@ public final class MainWindow extends WindowAdapter implements Runnable, ActionL
 
 			} else if (label.equals("Repeat Capture")) {
 				if (adc_controller.showCaptureProgress(frame) == DeviceController.DATA_READ) {
-					diagram.setCapturedData(adc_controller.getDeviceData());
+					diagram.setCapturedData(adc_controller.getDeviceData());				
 				}
 
 			} else if (label.equals("Exit")) {
