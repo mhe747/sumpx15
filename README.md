@@ -16,15 +16,16 @@ which contains all verilog files and la.ucf that need to be compiled, generate t
 Load the .bit into FPGA with Xilinx Impact. Now all done...
 
 Leave Xilinx ISE, start Eclipse to edit and compile the Java app project.
-Then, click sumpx15/clientx15/Makefile.bat which require java compiler in Java 1.8 JDK
-If all java sources are compiled in "/bin" directory, go to "/bin" directory, click run.bat
+Then, click sumpx15/clientx15/Makefile.bat which require java compiler in Java 1.8 JDK,
+all java sources are compiled in "/bin" directory, go to "/bin" directory, click run.bat
 The Java control app. would be launched, otherwise you have to check your bin directory and Java installation.
 
 Once the app launches ..
 
 the DAC used 14 bits, in a 8192 samples buffer 
 
-	1) now click to "blue hadoken" icon in menu icon bar
+	1)
+	now click to "blue hadoken" icon in menu icon bar
 	a popup window opens, now click on "decimal" radio button at top right side of the popup
 	in the central edit box put some values between 0 to 16383, eg. 16383 16383 16383 0 0 0 0 0 0
 	you notice that you can also put hexadecimal values, this feature remains superfluous since one unlikely use hexadecimal values.
@@ -35,7 +36,8 @@ the DAC used 14 bits, in a 8192 samples buffer
 
 the ADC used 8 bits, in a 8192 samples buffer
 
-	2) to use the original sump fpga oscilloscope feature, click to "red yellow rocket" icon button
+	2) 
+	to use the original sump fpga oscilloscope feature, click to "red yellow rocket" icon button
 	click to capture of the popup window to start one time probing thread
 	if you want to have the automatic cyclic probing (every second), click to green cycle button
 	click to capture of the popup to start probing thread, click to cancel to stop the thread
