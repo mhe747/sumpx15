@@ -24,8 +24,8 @@ NET "oscclk" TNM_NET = "xtalClock";
 TIMESPEC "TS_xtalClock" = PERIOD "xtalClock" 20 ns HIGH 50 %;
 
 ## RS232
-NET "Serial_in"  LOC = "p100" | IOSTANDARD = LVTTL ;
-NET "Serial_out"  LOC = "p99" | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = SLOW ;
+NET "Serial_in"  LOC = "p101" | IOSTANDARD = LVTTL ;
+NET "Serial_out"  LOC = "p100" | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = SLOW ;
 
 #NET "SPI_MOSI"  LOC = "p68" | IOSTANDARD = LVTTL ;
 #NET "SPI_MISO"  LOC = "p83" | IOSTANDARD = LVTTL ;
@@ -37,24 +37,25 @@ TIMESPEC "TS_exClock" = PERIOD "exClock" 8 ns HIGH 50 %;
 #input only
 #NET "reset"  LOC = "P42" | IOSTANDARD = LVCMOS33;
 
-
-# ADC - samples inputs
-NET input<0>  LOC="P199" | IOSTANDARD=LVTTL | PULLUP;                       # 
-NET input<1>  LOC="P200" | IOSTANDARD=LVTTL | PULLUP;                       # A1
-NET input<2>  LOC="P197" | IOSTANDARD=LVTTL | PULLUP;                       # A2
-NET input<3>  LOC="P196" | IOSTANDARD=LVTTL | PULLUP;                       # A3
-NET input<4>  LOC="P193" | IOSTANDARD=LVTTL | PULLUP;                       # A4
-NET input<5>  LOC="P192" | IOSTANDARD=LVTTL | PULLUP;                       # A5
-NET input<6>  LOC="P190" | IOSTANDARD=LVTTL | PULLUP;                       # A6
-NET input<7>  LOC="P189" | IOSTANDARD=LVTTL | PULLUP;                       # A7
-NET input<8>  LOC="P187" | IOSTANDARD=LVTTL | PULLUP;                       # A8
-NET input<9>  LOC="P185" | IOSTANDARD=LVTTL | PULLUP;                       # A9
-NET input<10> LOC="P181" | IOSTANDARD=LVTTL | PULLUP;                       # A10
-NET input<11> LOC="P180" | IOSTANDARD=LVTTL | PULLUP;                       # A11
-#NET input<12> LOC="P175" | IOSTANDARD=LVTTL | PULLUP;                       # A12
-#NET input<13> LOC="P174" | IOSTANDARD=LVTTL | PULLUP;                       # A13
-NET ADC_SCLK  LOC = "P205" | IOSTANDARD = LVTTL;
-NET ADC_SDATA LOC = "P203" | IOSTANDARD = LVTTL;
-NET ADC_SEN   LOC = "P202" | IOSTANDARD = LVTTL;
-NET ADC_RESET LOC = "P178" | IOSTANDARD = LVTTL;
-NET ADC_CLKP LOC = "P179" | IOSTANDARD = LVTTL;
+# ADC ADS5522 - analog signal sampling inputs
+NET input<0>  LOC="P204" | IOSTANDARD=LVCMOS33 | PULLUP;                       # A0 
+NET input<1>  LOC="P200" | IOSTANDARD=LVCMOS33 | PULLUP;                       # A1
+NET input<2>  LOC="P199" | IOSTANDARD=LVCMOS33 | PULLUP;                       # A2
+NET input<3>  LOC="P197" | IOSTANDARD=LVCMOS33 | PULLUP;                       # A3
+NET input<4>  LOC="P196" | IOSTANDARD=LVCMOS33 | PULLUP;                       # A4
+NET input<5>  LOC="P194" | IOSTANDARD=LVCMOS33 | PULLUP;                       # A5
+NET input<6>  LOC="P193" | IOSTANDARD=LVCMOS33 | PULLUP;                       # A6
+NET input<7>  LOC="P192" | IOSTANDARD=LVCMOS33 | PULLUP;                       # A7
+NET input<8>  LOC="P190" | IOSTANDARD=LVCMOS33 | PULLUP;                       # A8
+NET input<9>  LOC="P189" | IOSTANDARD=LVCMOS33 | PULLUP;                       # A9
+NET input<10> LOC="P187" | IOSTANDARD=LVCMOS33 | PULLUP;                       # A10
+NET input<11> LOC="P186" | IOSTANDARD=LVCMOS33 | PULLUP;                       # A11
+#NET input<12> LOC="P185" | IOSTANDARD=LVCMOS33 | PULLUP;                       # A12
+#NET input<13> LOC="P183" | IOSTANDARD=LVCMOS33 | PULLUP;                       # A13
+NET ADC_SCLK  LOC = "P205" | IOSTANDARD = LVCMOS33;
+NET ADC_SDATA LOC = "P203" | IOSTANDARD = LVCMOS33;
+NET ADC_SEN   LOC = "P202" | IOSTANDARD = LVCMOS33;
+NET ADC_RESET LOC = "P179" | IOSTANDARD = LVCMOS33;
+NET ADC_CLKP LOC = "P180" | IOSTANDARD = LVCMOS33;
+#NET ADC_OVR  LOC = "P181" | IOSTANDARD = LVCMOS33;
+#NET ADC_CLKOUT  LOC = "P161" | IOSTANDARD = LVCMOS33;
